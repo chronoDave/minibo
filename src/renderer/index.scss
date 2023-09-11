@@ -1,3 +1,5 @@
-/** Layers **/
-@import url('./scss/reset.scss') layer(reset);
-/** Imports **/
+@use 'sass:meta';
+
+@layer reset {
+  @include meta.load-css('./scss/reset.scss');
+}

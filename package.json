@@ -15,8 +15,10 @@
   "scripts": {
     "start:app": "node scripts/app.js --watch --dev",
     "start:electron": "node scripts/electron.js",
+    "build:test": "node scripts/tape.js",
     "build:app": "node scripts/app.js",
-    "build:electron": "electron-builder -p=never -c .electron.config.js"
+    "build:electron": "electron-builder -p=never -c .electron.config.js",
+    "test:app": "npm run build:test && tape build/test/app/**/*.spec.js"
   },
   "devDependencies": {
     "@types/node": "^20.6.0",
@@ -34,6 +36,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
+    "fast-glob": "^3.3.1",
     "jsdom": "^22.1.0",
     "minimist": "^1.2.8",
     "sass": "^1.66.1",
@@ -44,6 +47,8 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "forgo": "^4.1.5"
+    "deepmerge": "^4.3.1",
+    "forgo": "^4.1.5",
+    "immer": "^10.0.2"
   }
 }

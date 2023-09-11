@@ -19,6 +19,11 @@ Promise.all([
     ],
     bundle: true,
     minify: !dev,
+    define: {
+      'process.env.NODE_ENV': watch ?
+        '"development"' :
+        '"production"'
+    },
     platform: 'node',
     outdir: 'build/app',
     outbase: 'src/app',
@@ -38,6 +43,11 @@ Promise.all([
     ],
     bundle: true,
     minify: !dev,
+    define: {
+      'process.env.NODE_ENV': watch ?
+        '"development"' :
+        '"production"'
+    },
     outdir: 'build/app/renderer',
     outbase: 'src/renderer',
     plugins: [

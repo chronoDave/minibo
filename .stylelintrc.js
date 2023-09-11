@@ -15,7 +15,7 @@ module.exports = {
     'function-name-case': null,
     'selector-type-case': 'lower',
     'value-keyword-case': 'lower',
-    'import-notation': 'string',
+    'import-notation': 'url',
     // SCSS
     'scss/double-slash-comment-empty-line-before': null,
     'scss/dollar-variable-empty-line-before': null,
