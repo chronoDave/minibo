@@ -18,8 +18,13 @@ const run = () => {
 let app = run();
 chokidar.watch([
   'build/app/app.cjs'
-]).on('change', () => {
-  console.log('[electron] detected change, restarting');
-  app.kill('SIGINT');
-  app = run();
-});
+])
+  .on('change', () => {
+    console.log('[electron] detected change, restarting');
+    app.kill('SIGINT');
+    app = run();
+  })
+  .on('error', err => {
+    app.kill('SIGINT');
+    console.error(err);
+  });
