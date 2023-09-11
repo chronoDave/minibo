@@ -1,0 +1,47 @@
+{
+  "name": "minibo",
+  "version": "0.0.1",
+  "description": "Plain and simple portable kanban board",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chronoDave/minibo.git"
+  },
+  "author": "Chronocide",
+  "private": true,
+  "license": "GPL-3.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18.17.1"
+  },
+  "scripts": {
+    "start:app": "node scripts/app.js --watch --dev",
+    "start:electron": "node scripts/electron.js",
+    "build:app": "node scripts/app.js",
+    "build:electron": "electron-builder -p=never -c .electron.config.cjs"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "@types/tape": "^5.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "chokidar": "^3.5.3",
+    "electron": "^26.2.0",
+    "electron-builder": "^24.6.4",
+    "esbuild": "^0.19.2",
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "jsdom": "^22.1.0",
+    "minimist": "^1.2.8",
+    "sass": "^1.66.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "tape": "^5.6.6",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.0-dev.20230911"
+  }
+}

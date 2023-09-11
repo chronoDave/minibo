@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["ESNext", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true,
+
+    "strict": true,
+    "noImplicitAny": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "jsx": "react",
+    "jsxFactory": "forgo.createElement",
+    "jsxFragmentFactory": "forgo.Fragment",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+
+    "outDir": "build"
+  },
+  "include": [
+    "src",
+    "test",
+    "scripts",
+    ".eslintrc.js",
+    ".electron.config.js"
+  ],
+}
