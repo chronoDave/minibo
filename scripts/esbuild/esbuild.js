@@ -1,6 +1,6 @@
-import esbuild from 'esbuild';
+const esbuild = require('esbuild');
 
-export default config => async options => {
+module.exports = config => async options => {
   if (!options.watch) return esbuild.build(config);
 
   const context = await esbuild.context(config);

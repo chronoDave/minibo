@@ -1,12 +1,12 @@
-import { execFile } from 'child_process';
-import chokidar from 'chokidar';
+const { execFile } = require('child_process');
+const chokidar = require('chokidar');
 
 const run = () => {
   console.log('[electron] starting electron');
 
   const childProcess = execFile('node', [
     './node_modules/electron/cli.js',
-    'build/app/app.cjs'
+    'build/app/app.js'
   ]);
 
   childProcess.stdout.on('data', console.log);
@@ -17,7 +17,7 @@ const run = () => {
 
 let app = run();
 chokidar.watch([
-  'build/app/app.cjs'
+  'build/app/app.js'
 ])
   .on('change', () => {
     console.log('[electron] detected change, restarting');

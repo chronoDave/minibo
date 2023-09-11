@@ -9,7 +9,6 @@
   "author": "Chronocide",
   "private": true,
   "license": "GPL-3.0",
-  "type": "module",
   "engines": {
     "node": ">=18.17.1"
   },
@@ -17,7 +16,7 @@
     "start:app": "node scripts/app.js --watch --dev",
     "start:electron": "node scripts/electron.js",
     "build:app": "node scripts/app.js",
-    "build:electron": "electron-builder -p=never -c .electron.config.cjs"
+    "build:electron": "electron-builder -p=never -c .electron.config.js"
   },
   "devDependencies": {
     "@types/node": "^20.6.0",
@@ -42,6 +41,9 @@
     "stylelint-config-standard-scss": "^11.0.0",
     "tape": "^5.6.6",
     "tslib": "^2.6.2",
-    "typescript": "^5.3.0-dev.20230911"
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "forgo": "^4.1.5"
   }
 }

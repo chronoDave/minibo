@@ -36,14 +36,6 @@ module.exports = {
   ignorePatterns: [
     '**/build/**/*.js'
   ],
-  overrides: [{
-    files: ['scripts/**/*'],
-    rules: {
-      'no-console': 'off',
-      // Import
-      'import/extensions': ['error', 'always']
-    }
-  }],
   rules: {
     // TypeScript
     '@typescript-eslint/no-unused-vars': ['error', {

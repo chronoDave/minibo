@@ -1,10 +1,10 @@
-import minimist from 'minimist';
+const minimist = require('minimist');
 
-import esbuild from './esbuild/esbuild.js';
-import clean from './esbuild/plugins/clean.js';
-import copy from './esbuild/plugins/copy.js';
-import log from './esbuild/plugins/log.js';
-import sass from './esbuild/plugins/sass.js';
+const esbuild = require('./esbuild/esbuild');
+const clean = require('./esbuild/plugins/clean');
+const copy = require('./esbuild/plugins/copy');
+const log = require('./esbuild/plugins/log');
+const sass = require('./esbuild/plugins/sass');
 
 const { watch, dev } = minimist(process.argv.slice(2));
 
@@ -22,9 +22,6 @@ Promise.all([
     platform: 'node',
     outdir: 'build/app',
     outbase: 'src/app',
-    outExtension: {
-      '.js': '.cjs'
-    },
     plugins: [
       log('app'),
       copy([{
@@ -61,5 +58,7 @@ Promise.all([
     ]
   })({ watch })
 ])
-  .then(() => process.exit(0))
+  .then(() => {
+    if (!watch) process.exit(0)
+  })
   .catch(console.error);

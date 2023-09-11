@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
-export default dirs => ({
+module.exports = dirs => ({
   name: 'clean',
   setup: build => {
     build.onStart(() => {

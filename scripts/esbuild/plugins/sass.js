@@ -1,8 +1,8 @@
-import fs from 'fs';
-import fsp from 'fs/promises';
-import path from 'path';
-import * as sass from 'sass';
-import { fileURLToPath, pathToFileURL } from 'url';
+const fs = require('fs');
+const fsp = require('fs/promises');
+const path = require('path');
+const sass = require('sass');
+const { fileURLToPath, pathToFileURL } = require('url');
 
 const getLastModified = async files => {
   const stats = await Promise.all(files.map(file => fsp.stat(file)));
@@ -48,7 +48,7 @@ const createRender = options => async (css, file) => {
   });
 };
 
-export default options => ({
+module.exports = options => ({
   name: 'sass',
   setup: build => {
     const cache = new Map();

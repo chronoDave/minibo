@@ -1,8 +1,8 @@
-import chokidar from 'chokidar';
-import fs from 'fs';
-import path from 'path';
+const chokidar = require('chokidar');
+const fs = require('fs');
+const path = require('path');
 
-export default dirs => ({
+module.exports = dirs => ({
   name: 'copy',
   setup: () => {
     const copy = dir => {
