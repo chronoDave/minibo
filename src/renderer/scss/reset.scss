@@ -1,53 +1,30 @@
-:where(:not(html, iframe, canvas, img, svg *, video *)) {
-  all: unset;
-  display: revert;
-}
-
-:where([contenteditable]:not([contenteditable="false"])) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  line-break: after-white-space;
-  user-select: auto;
-}
-
-:where([draggable="true"]) {
-  -webkit-user-drag: element;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-a,
-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  cursor: revert;
+html {
+  text-size-adjust: none;
 }
 
-ol,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
 ul,
-menu {
+ol {
   list-style: none;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-meter {
-  -webkit-appearance: revert;
-  appearance: revert;
-}
-
-input[type='search']::-webkit-search-cancel-button {
-  display: none;
-}
-
-::placeholder {
-  color: unset;
+  padding: unset;
 }

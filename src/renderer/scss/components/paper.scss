@@ -1,0 +1,6 @@
+@use 'shadows';
+
+.Paper {
+  border-radius: 4px;
+  box-shadow: shadows.$low;
+}

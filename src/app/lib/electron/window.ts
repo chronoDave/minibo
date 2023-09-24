@@ -5,6 +5,7 @@ import type Storage from '../storage/storage';
 import { BrowserWindow } from 'electron';
 import { produce } from 'immer';
 
+import appShape from '../../../types/shapes/app.shape';
 import { IS_DEV } from '../../../utils/const';
 import debounce from '../../utils/debounce';
 
@@ -14,13 +15,11 @@ export type WindowOptions = {
 };
 
 export default (options: WindowOptions) => {
-  console.log(options.storage.get().window);
-
   const window = new BrowserWindow({
     ...options.storage.get().window,
     title: 'Minibo',
-    minWidth: 640,
-    minHeight: 480,
+    minWidth: appShape.window.width,
+    minHeight: appShape.window.height,
     webPreferences: {
       enableWebSQL: false
     }

@@ -1,0 +1,7 @@
+.Board {
+  > ul {
+    display: flex;
+    gap: 4px;
+    overflow: auto;
+  }
+}

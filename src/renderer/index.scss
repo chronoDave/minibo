@@ -2,4 +2,13 @@
 
 @layer reset {
   @include meta.load-css('./scss/reset.scss');
+  @include meta.load-css('./scss/components/button.scss');
+}
+
+@layer typography {
+  @include meta.load-css('./scss/typography.scss');
+}
+
+@layer theme {
+  @include meta.load-css('./scss/components/paper.scss');
 }
