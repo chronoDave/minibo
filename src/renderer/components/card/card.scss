@@ -1,7 +1,19 @@
 .Card {
-  padding: 4px 8px;
+  padding: 4px;
 
   > .title {
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+
+    > .draggable {
+      display: inline-flex;
+      cursor: grab;
+    }
+
+    > h3 {
+      padding: 0 8px;
+      padding-left: 0;
+      font-weight: 600;
+    }
   }
 }

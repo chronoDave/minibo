@@ -1,33 +1,37 @@
-import type { Board as BoardEntity } from '../types/entities';
-
 import * as forgo from 'forgo';
 
-import Board from './components/board/board';
+import App from './modules/app/app';
+import store from './state/store';
 
-const board: BoardEntity = {
-  id: 'main',
-  title: 'Minibo',
-  lanes: [{
-    id: '1',
+store(state => {
+  state.entities.board.set('id', {
+    id: 'id',
+    title: 'Default',
+    lanes: new Set(['todo', 'inprogress', 'done']),
+    tags: new Set()
+  });
+  state.entities.lane.set('todo', {
+    id: 'todo',
     title: 'To-do',
-    cards: [{
-      id: '1',
-      title: 'Create board',
-      tags: [],
-      description: 'Create a board',
-      checklist: []
-    }]
-  }, {
-    id: '2',
-    title: 'In Progress',
-    cards: []
-  }, {
-    id: '3',
+    cards: new Set(['1'])
+  });
+  state.entities.lane.set('inprogress', {
+    id: 'inprogress',
+    title: 'In progress',
+    cards: new Set()
+  });
+  state.entities.lane.set('done', {
+    id: 'done',
     title: 'Done',
-    cards: []
-  }]
-};
+    cards: new Set()
+  });
+  state.entities.card.set('1', {
+    id: '1',
+    title: 'Minibo',
+    tags: new Set()
+  });
 
-forgo.mount((
-  <Board board={board} />
-), document.body);
+  state.selected.board = 'id';
+});
+
+forgo.mount(<App />, document.body);
