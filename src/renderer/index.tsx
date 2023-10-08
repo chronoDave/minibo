@@ -28,6 +28,7 @@ store(state => {
   state.entities.card.set('1', {
     id: '1',
     title: 'Minibo',
+    description: 'This is my description',
     tags: new Set()
   });
 

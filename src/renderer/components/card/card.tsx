@@ -47,6 +47,9 @@ const Card: Component<CardProps> = () => {
             </span>
             <h3 class='body'>{props.card.title}</h3>
           </div>
+          <div class='body'>
+            <p>{props.card.description}</p>
+          </div>
         </article>
       );
     }

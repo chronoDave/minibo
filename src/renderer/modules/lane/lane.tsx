@@ -3,8 +3,9 @@ import type { ForgoNewComponentCtor as Component } from 'forgo';
 
 import * as forgo from 'forgo';
 
+import Button from '../../components/button/button';
 import Card from '../../components/card/card';
-import { moveCard } from '../../state/actions/lane.action';
+import { createCard, moveCard } from '../../state/actions/lane.action';
 import { subscribe } from '../../state/publisher';
 import { cardsSelector } from '../../state/selectors/card.selector';
 
@@ -51,6 +52,11 @@ const Lane: Component<LaneProps> = () => {
               />
             ))}
           </ul>
+          <Button
+            onClick={() => createCard(props.lane.id)}
+          >
+            +
+          </Button>
         </div>
       );
     }

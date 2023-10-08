@@ -1,6 +1,10 @@
 .Card {
   padding: 4px;
 
+  &.dragging {
+    border: 1px solid #000;
+  }
+
   > .title {
     display: flex;
     align-items: center;
